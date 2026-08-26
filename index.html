@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Kingdom Ministries | Unified Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #f1c40f;
+            --dark: #0f172a;
+            --glass: rgba(15, 23, 42, 0.88);
+            --transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation; 
+        }
+
+        html, body { 
+            width: 100%; 
+            height: 100%; 
+            font-family: 'Inter', sans-serif; 
+            background: var(--dark); 
+            color: white; 
+            overflow: hidden; 
+            overscroll-behavior: none; 
+        }
+
+        /* CIRCULAR NAV HUB */
+        #hub-container {
+            position: fixed; 
+            inset: 0; 
+            z-index: 9999;
+            background: radial-gradient(circle, #1e293b 0%, #0f172a 100%);
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            align-items: center;
+            padding: clamp(20px, 4vh, 40px) 15px;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            will-change: opacity, transform;
+        }
+
+        #hub-container.hidden {
+            opacity: 0; 
+            pointer-events: none; 
+            transform: scale(1.08);
+        }
+
+        .hub-title {
+            font-family: 'Cinzel', serif; 
+            font-size: clamp(1.4rem, 4.5vw, 3.2rem);
+            font-weight: 800;
+            color: var(--gold); 
+            text-align: center; 
+            text-shadow: 0 0 25px rgba(241, 196, 15, 0.4);
+            line-height: 1.2;
+            z-index: 10;
+            user-select: none;
+            letter-spacing: 0.05em;
+        }
+
+        /* RESPONSIVE MENU RING */
+        .circle-menu-wrapper {
+            position: relative;
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .circle-menu {
+            position: relative; 
+            /* Scaled up orbit diameter */
+            width: min(82vw, 68vh);
+            height: min(82vw, 68vh);
+            min-width: 310px;
+            min-height: 310px;
+            max-width: 620px;
+            max-height: 620px;
+            border-radius: 50%; 
+            border: 3px dashed rgba(241, 196, 15, 0.4);
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            animation: rotateOrbit 60s linear infinite;
+            will-change: transform;
+        }
+
+        .circle-menu.paused { 
+            animation-play-state: paused !important; 
+        }
+
+        @keyframes rotateOrbit {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* ENLARGED CENTER NODE */
+        .center-node {
+            position: absolute; 
+            width: clamp(100px, 22vmin, 160px); 
+            height: clamp(100px, 22vmin, 160px); 
+            border-radius: 50%;
+            background: var(--gold); 
+            color: var(--dark); 
+            font-family: 'Cinzel', serif;
+            font-weight: 800; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            text-align: center; 
+            box-shadow: 0 0 50px rgba(241, 196, 15, 0.5);
+            cursor: pointer; 
+            z-index: 10; 
+            font-size: clamp(0.95rem, 2.8vmin, 1.4rem);
+            padding: 10px;
+            user-select: none;
+            letter-spacing: 0.05em;
+        }
+
+        /* ENLARGED APP NODES */
+        .app-node {
+            position: absolute; 
+            width: clamp(90px, 20vmin, 150px); 
+            height: clamp(90px, 20vmin, 150px);
+            border-radius: 50%; 
+            background: var(--glass); 
+            border: 2.5px solid var(--gold);
+            backdrop-filter: blur(15px); 
+            -webkit-backdrop-filter: blur(15px);
+            display: flex; 
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            text-align: center;
+            cursor: pointer; 
+            transition: var(--transition); 
+            color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6); 
+            padding: 8px;
+            transform-origin: center center;
+            transform: translate(-50%, -50%);
+            user-select: none;
+            will-change: transform;
+        }
+
+        .app-node:active, .app-node.active-touch {
+            transform: translate(-50%, -50%) scale(1.15) !important; 
+            background: var(--gold); 
+            color: var(--dark);
+            box-shadow: 0 0 35px var(--gold);
+            z-index: 20;
+        }
+
+        /* BOOSTED TYPOGRAPHY */
+        .app-node span { 
+            font-size: clamp(0.7rem, 1.8vmin, 0.95rem); 
+            font-weight: 800; 
+            text-transform: uppercase; 
+            margin-top: 4px; 
+            line-height: 1.1;
+            letter-spacing: 0.03em;
+        }
+
+        .app-node .content {
+            animation: counterRotate 60s linear infinite;
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            will-change: transform;
+        }
+
+        .circle-menu.paused .app-node .content { 
+            animation-play-state: paused !important; 
+        }
+
+        @keyframes counterRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(-360deg); }
+        }
+
+        /* VIEWPORT CONTAINERS (IFRAMES) */
+        .app-frame {
+            position: fixed; 
+            inset: 0; 
+            width: 100%; 
+            height: 100%; 
+            border: none;
+            z-index: 100; 
+            display: none; 
+            background: var(--dark);
+        }
+
+        .app-frame.active { display: block; }
+
+        /* FLOATING HUB BUTTON */
+        #floating-hub-btn {
+            position: fixed; 
+            top: env(safe-area-inset-top, 20px); 
+            border-left: 20px; 
+            z-index: 10000;
+            background: var(--gold); 
+            color: var(--dark); 
+            border: none;
+            padding: 14px 28px; 
+            border-radius: 50px; 
+            font-weight: 800;
+            cursor: pointer; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            display: none; 
+            text-transform: uppercase; 
+            font-size: 0.85rem;
+            transition: var(--transition);
+            min-height: 48px;
+        }
+
+        #floating-hub-btn:active { transform: scale(0.95); }
+    </style>
+</head>
+<body>
+
+    <!-- CIRCULAR HUB CONTROLLER -->
+    <div id="hub-container">
+        <h1 class="hub-title">INTERNATIONAL INTERCESSORS NETWORK</h1>
+        
+        <div class="circle-menu-wrapper">
+            <div class="circle-menu" id="circleMenu">
+                <div class="center-node">HOLY SPIRIT</div>
+                
+                <div class="app-node" data-app="app-salvation">
+                    <div class="content">
+                        <div style="font-size: clamp(1.4rem, 3.5vmin, 2.2rem);">🌍</div>
+                        <span>Salvation</span>
+                    </div>
+                </div>
+                
+                <div class="app-node" data-app="app-living-word">
+                    <div class="content">
+                        <div style="font-size: clamp(1.4rem, 3.5vmin, 2.2rem);">📖</div>
+                        <span>Living Word</span>
+                    </div>
+                </div>
+
+                <div class="app-node" data-app="app-kingdom-come">
+                    <div class="content">
+                        <div style="font-size: clamp(1.4rem, 3.5vmin, 2.2rem);">👑</div>
+                        <span>Kingdom Come</span>
+                    </div>
+                </div>
+
+                <div class="app-node" data-app="app-reconciliation">
+                    <div class="content">
+                        <div style="font-size: clamp(1.4rem, 3.5vmin, 2.2rem);">🕊️</div>
+                        <span>Reconcile</span>
+                    </div>
+                </div>
+
+                <div class="app-node" data-app="app-gods-generals">
+                    <div class="content">
+                        <div style="font-size: clamp(1.4rem, 3.5vmin, 2.2rem);">⚔️</div>
+                        <span>God's Generals</span>
+                    </div>
+                </div>
+
+                <div class="app-node" data-app="app-bible-teaching">
+                    <div class="content">
+                        <div style="font-size: clamp(1.4rem, 3.5vmin, 2.2rem);">📜</div>
+                        <span>Bible Teaching</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLOATING HOME BUTTON -->
+    <button id="floating-hub-btn" onclick="returnToHub()">☰ Hub</button>
+
+    <!-- ISOLATED SCRIPT CONTAINERS -->
+    <iframe id="app-salvation" class="app-frame" allow="microphone; geolocation" src="https://jesus-nine-drab.vercel.app"></iframe>
+    <iframe id="app-living-word" class="app-frame" allow="microphone" src="https://written-gamma.vercel.app"></iframe>
+    <iframe id="app-kingdom-come" class="app-frame" allow="camera; microphone" src="https://ka-ten-rust.vercel.app"></iframe>
+    <iframe id="app-reconciliation" class="app-frame" allow="microphone" src="https://reconcile-blond.vercel.app"></iframe>
+    <iframe id="app-gods-generals" class="app-frame" allow="microphone" src="https://ochollah.github.io/Genaral"></iframe>
+    <iframe id="app-bible-teaching" class="app-frame" allow="microphone" src="https://ochollah.github.io/Word"></iframe>
+
+    <script>
+        const menu = document.getElementById('circleMenu');
+
+        function layoutNodes() {
+            if (!menu) return;
+            const nodes = menu.querySelectorAll('.app-node');
+            const total = nodes.length;
+            const radius = menu.offsetWidth / 2;
+
+            nodes.forEach((node, index) => {
+                const angle = (index / total) * (2 * Math.PI) - (Math.PI / 2);
+                const x = radius + radius * Math.cos(angle);
+                const y = radius + radius * Math.sin(angle);
+
+                node.style.left = `${x}px`;
+                node.style.top = `${y}px`;
+            });
+        }
+
+        // TOUCH & HOVER CONTROLS
+        menu.addEventListener('touchstart', () => menu.classList.add('paused'), { passive: true });
+        menu.addEventListener('touchend', () => setTimeout(() => menu.classList.remove('paused'), 1200), { passive: true });
+        menu.addEventListener('mouseenter', () => menu.classList.add('paused'));
+        menu.addEventListener('mouseleave', () => menu.classList.remove('paused'));
+
+        // TAP / CLICK HANDLERS
+        document.querySelectorAll('.app-node').forEach(node => {
+            const appId = node.getAttribute('data-app');
+
+            node.addEventListener('touchstart', function() {
+                this.classList.add('active-touch');
+            }, { passive: true });
+
+            node.addEventListener('touchend', function() {
+                this.classList.remove('active-touch');
+                launchApp(appId);
+            });
+
+            node.addEventListener('click', function() {
+                launchApp(appId);
+            });
+        });
+
+        function launchApp(appId) {
+            document.getElementById('hub-container').classList.add('hidden');
+            document.querySelectorAll('.app-frame').forEach(frame => frame.classList.remove('active'));
+            const target = document.getElementById(appId);
+            if (target) {
+                target.classList.add('active');
+                document.getElementById('floating-hub-btn').style.display = 'block';
+            }
+        }
+
+        function returnToHub() {
+            document.querySelectorAll('.app-frame').forEach(frame => frame.classList.remove('active'));
+            document.getElementById('hub-container').classList.remove('hidden');
+            document.getElementById('floating-hub-btn').style.display = 'none';
+        }
+
+        window.addEventListener('load', layoutNodes);
+        window.addEventListener('resize', layoutNodes);
+        window.addEventListener('orientationchange', layoutNodes);
+    </script>
+</body>
+</html>
