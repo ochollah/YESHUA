@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Kingdom Ministries | Unified Portal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
+    <title>YESHUA|JESUS|ADONAI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #f1c40f;
+            --gold-bright: #ffe066;
             --dark: #0f172a;
             --glass: rgba(15, 23, 42, 0.88);
             --transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
@@ -41,7 +42,7 @@
             flex-direction: column; 
             justify-content: space-between; 
             align-items: center;
-            padding: clamp(20px, 4vh, 40px) 15px;
+            padding: clamp(15px, 3vh, 35px) 15px;
             transition: opacity 0.4s ease, transform 0.4s ease;
             will-change: opacity, transform;
         }
@@ -52,17 +53,63 @@
             transform: scale(1.08);
         }
 
-        .hub-title {
-            font-family: 'Cinzel', serif; 
-            font-size: clamp(1.4rem, 4.5vw, 3.2rem);
-            font-weight: 800;
-            color: var(--gold); 
-            text-align: center; 
-            text-shadow: 0 0 25px rgba(241, 196, 15, 0.4);
-            line-height: 1.2;
+        /* LOGO & TITLE HEADER SECTION */
+        .brand-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(4px, 1.2vh, 10px);
             z-index: 10;
             user-select: none;
+            width: 100%;
+        }
+
+        /* EMBLEM / LOGO STYLING */
+        .brand-logo-wrapper {
+            position: relative;
+            width: clamp(110px, 20vmin, 165px);
+            height: clamp(110px, 20vmin, 165px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: drop-shadow(0 0 18px rgba(241, 196, 15, 0.45));
+        }
+
+        .brand-logo-svg {
+            width: 100%;
+            height: 100%;
+            animation: pulseGlow 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% { filter: drop-shadow(0 0 8px rgba(241, 196, 15, 0.35)); transform: scale(1); }
+            100% { filter: drop-shadow(0 0 25px rgba(241, 196, 15, 0.75)); transform: scale(1.03); }
+        }
+
+        .hub-title {
+            font-family: 'Cinzel', serif; 
+            font-size: clamp(1.2rem, 3.8vw, 2.6rem);
+            font-weight: 900;
+            color: var(--gold); 
+            text-align: center; 
+            text-shadow: 0 0 20px rgba(241, 196, 15, 0.4);
+            line-height: 1.15;
             letter-spacing: 0.05em;
+        }
+
+        .tagline-banner {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(0.5rem, 1.2vw, 0.8rem);
+            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 700;
+            border-top: 1px solid rgba(241, 196, 15, 0.35);
+            border-bottom: 1px solid rgba(241, 196, 15, 0.35);
+            padding: 4px 10px;
+            margin-top: 2px;
         }
 
         /* RESPONSIVE MENU RING */
@@ -77,13 +124,12 @@
 
         .circle-menu {
             position: relative; 
-            /* Scaled up orbit diameter */
-            width: min(82vw, 68vh);
-            height: min(82vw, 68vh);
-            min-width: 310px;
-            min-height: 310px;
-            max-width: 620px;
-            max-height: 620px;
+            width: min(78vw, 62vh);
+            height: min(78vw, 62vh);
+            min-width: 290px;
+            min-height: 290px;
+            max-width: 580px;
+            max-height: 580px;
             border-radius: 50%; 
             border: 3px dashed rgba(241, 196, 15, 0.4);
             display: flex; 
@@ -105,8 +151,8 @@
         /* ENLARGED CENTER NODE */
         .center-node {
             position: absolute; 
-            width: clamp(100px, 22vmin, 160px); 
-            height: clamp(100px, 22vmin, 160px); 
+            width: clamp(95px, 20vmin, 150px); 
+            height: clamp(95px, 20vmin, 150px); 
             border-radius: 50%;
             background: var(--gold); 
             color: var(--dark); 
@@ -128,8 +174,8 @@
         /* ENLARGED APP NODES */
         .app-node {
             position: absolute; 
-            width: clamp(90px, 20vmin, 150px); 
-            height: clamp(90px, 20vmin, 150px);
+            width: clamp(85px, 18vmin, 140px); 
+            height: clamp(85px, 18vmin, 140px);
             border-radius: 50%; 
             background: var(--glass); 
             border: 2.5px solid var(--gold);
@@ -161,7 +207,7 @@
 
         /* BOOSTED TYPOGRAPHY */
         .app-node span { 
-            font-size: clamp(0.7rem, 1.8vmin, 0.95rem); 
+            font-size: clamp(0.65rem, 1.6vmin, 0.9rem); 
             font-weight: 800; 
             text-transform: uppercase; 
             margin-top: 4px; 
@@ -208,7 +254,7 @@
         #floating-hub-btn {
             position: fixed; 
             top: env(safe-area-inset-top, 20px); 
-            border-left: 20px; 
+            left: 20px; 
             z-index: 10000;
             background: var(--gold); 
             color: var(--dark); 
@@ -232,8 +278,61 @@
 
     <!-- CIRCULAR HUB CONTROLLER -->
     <div id="hub-container">
-        <h1 class="hub-title">INTERNATIONAL INTERCESSORS NETWORK</h1>
         
+        <!-- HEADER WITH HOLY SPIRIT LOGO & FULL SLOGAN -->
+        <header class="brand-header">
+            <div class="brand-logo-wrapper">
+                <svg class="brand-logo-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Circular Text Path -->
+                    <path id="textCircle" d="M 100, 100 m -78, 0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0" fill="none"/>
+                    
+                    <!-- Decorative Golden Rings -->
+                    <circle cx="100" cy="100" r="96" stroke="#f1c40f" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/>
+                    <circle cx="100" cy="100" r="87" stroke="#f1c40f" stroke-width="1.5" opacity="0.85"/>
+                    <circle cx="100" cy="100" r="67" stroke="#f1c40f" stroke-width="2"/>
+                    
+                    <!-- Circular Slogan Arc -->
+                    <text font-family="'Cinzel', serif" font-size="7.5" font-weight="700" fill="#f1c40f" letter-spacing="1.4">
+                        <textPath href="#textCircle" startOffset="50%" text-anchor="middle">
+                            WE ROAR • WE INTERCEDE • WE SOAR • WE GROAN • WE PRAY • WE TEACH WORD
+                        </textPath>
+                    </text>
+                    
+                    <!-- Holy Spirit Ascending Light Rays & Flames -->
+                    <g opacity="0.85">
+                        <line x1="100" y1="35" x2="100" y2="48" stroke="#f1c40f" stroke-width="2"/>
+                        <line x1="60" y1="50" x2="70" y2="58" stroke="#f1c40f" stroke-width="1.5"/>
+                        <line x1="140" y1="50" x2="130" y2="58" stroke="#f1c40f" stroke-width="1.5"/>
+                        <line x1="42" y1="80" x2="54" y2="84" stroke="#f1c40f" stroke-width="1.5"/>
+                        <line x1="158" y1="80" x2="146" y2="84" stroke="#f1c40f" stroke-width="1.5"/>
+                    </g>
+                    
+                    <!-- Holy Spirit Dove Silhouette (Center Motif) -->
+                    <g transform="translate(100, 96) scale(0.85)">
+                        <!-- Outer Holy Spirit Fire Glow -->
+                        <path d="M0 -32 C-12 -22, -28 -12, -44 -14 C-26 2, -14 10, -8 24 C-4 12, 4 12, 8 24 C14 10, 26 2, 44 -14 C28 -12, 12 -22, 0 -32 Z" fill="#f1c40f" opacity="0.25"/>
+                        
+                        <!-- Main Dove Body -->
+                        <path d="M0 -26 C-9 -18, -22 -8, -36 -10 C-20 2, -10 8, -5 20 C-3 10, 3 10, 5 20 C10 8, 20 2, 36 -10 C22 -8, 9 -18, 0 -26 Z" fill="#f1c40f"/>
+                        <!-- Dove Head & Descending Beak -->
+                        <circle cx="0" cy="-24" r="5.5" fill="#f1c40f"/>
+                        <path d="M0 -18 L-2 -12 L2 -12 Z" fill="#0f172a"/>
+                        
+                        <!-- Open Word Bible Base -->
+                        <path d="M-22 24 Q0 18 0 28 Q0 18 22 24 L20 34 Q0 28 0 36 Q0 28 -20 34 Z" fill="#f1c40f"/>
+                        <path d="M-18 26 Q0 21 0 29 M0 29 Q0 21 18 26" stroke="#0f172a" stroke-width="1.5" fill="none"/>
+                    </g>
+                    
+                    <!-- Anointing Oil Drop Emblem Base -->
+                    <path d="M100 154 C96 160, 93 163, 93 167 C93 171, 96 174, 100 174 C104 174, 107 171, 107 167 C107 163, 104 160, 100 154 Z" fill="#f1c40f"/>
+                </svg>
+            </div>
+            
+            <h1 class="hub-title">INTERNATIONAL INTERCESSORS NETWORK</h1>
+            <div class="tagline-banner">We Roar • We Intercede • We Soar • We Groan • We Pray • We Teach Word</div>
+        </header>
+        
+        <!-- CIRCULAR NAV WHEEL -->
         <div class="circle-menu-wrapper">
             <div class="circle-menu" id="circleMenu">
                 <div class="center-node">HOLY SPIRIT</div>
