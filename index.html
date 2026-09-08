@@ -174,8 +174,8 @@
         /* ENLARGED APP NODES */
         .app-node {
             position: absolute; 
-            width: clamp(85px, 18vmin, 140px); 
-            height: clamp(85px, 18vmin, 140px);
+            width: clamp(75px, 16vmin, 130px); 
+            height: clamp(75px, 16vmin, 130px);
             border-radius: 50%; 
             background: var(--glass); 
             border: 2.5px solid var(--gold);
@@ -207,7 +207,7 @@
 
         /* BOOSTED TYPOGRAPHY */
         .app-node span { 
-            font-size: clamp(0.65rem, 1.6vmin, 0.9rem); 
+            font-size: clamp(0.6rem, 1.4vmin, 0.85rem); 
             font-weight: 800; 
             text-transform: uppercase; 
             margin-top: 4px; 
@@ -339,43 +339,51 @@
                 
                 <div class="app-node" data-app="app-salvation">
                     <div class="content">
-                        <div style="font-size: clamp(1.4rem, 3.5vmin, 2.2rem);">🌍</div>
+                        <div style="font-size: clamp(1.2rem, 3vmin, 2rem);">🌍</div>
                         <span>Salvation</span>
                     </div>
                 </div>
                 
                 <div class="app-node" data-app="app-living-word">
                     <div class="content">
-                        <div style="font-size: clamp(1.4rem, 3.5vmin, 2.2rem);">📖</div>
+                        <div style="font-size: clamp(1.2rem, 3vmin, 2rem);">📖</div>
                         <span>Living Word</span>
                     </div>
                 </div>
 
                 <div class="app-node" data-app="app-kingdom-come">
                     <div class="content">
-                        <div style="font-size: clamp(1.4rem, 3.5vmin, 2.2rem);">👑</div>
+                        <div style="font-size: clamp(1.2rem, 3vmin, 2rem);">👑</div>
                         <span>Kingdom Come</span>
                     </div>
                 </div>
 
                 <div class="app-node" data-app="app-reconciliation">
                     <div class="content">
-                        <div style="font-size: clamp(1.4rem, 3.5vmin, 2.2rem);">🕊️</div>
+                        <div style="font-size: clamp(1.2rem, 3vmin, 2rem);">🕊️</div>
                         <span>Reconcile</span>
                     </div>
                 </div>
 
                 <div class="app-node" data-app="app-gods-generals">
                     <div class="content">
-                        <div style="font-size: clamp(1.4rem, 3.5vmin, 2.2rem);">⚔️</div>
+                        <div style="font-size: clamp(1.2rem, 3vmin, 2rem);">⚔️</div>
                         <span>God's Generals</span>
                     </div>
                 </div>
 
                 <div class="app-node" data-app="app-bible-teaching">
                     <div class="content">
-                        <div style="font-size: clamp(1.4rem, 3.5vmin, 2.2rem);">📜</div>
+                        <div style="font-size: clamp(1.2rem, 3vmin, 2rem);">📜</div>
                         <span>Bible Teaching</span>
+                    </div>
+                </div>
+
+                <!-- NEW SERMON EDITOR NODE -->
+                <div class="app-node" data-app="app-sermon-editor">
+                    <div class="content">
+                        <div style="font-size: clamp(1.2rem, 3vmin, 2rem);">✍️</div>
+                        <span>Sermon Editor</span>
                     </div>
                 </div>
             </div>
@@ -392,6 +400,7 @@
     <iframe id="app-reconciliation" class="app-frame" allow="microphone" src="https://reconcile-blond.vercel.app"></iframe>
     <iframe id="app-gods-generals" class="app-frame" allow="microphone" src="https://ochollah.github.io/Genaral"></iframe>
     <iframe id="app-bible-teaching" class="app-frame" allow="microphone" src="https://ochollah.github.io/Word"></iframe>
+    <iframe id="app-sermon-editor" class="app-frame" allow="microphone" src="https://sermon-wheat.vercel.app"></iframe>
 
     <script>
         const menu = document.getElementById('circleMenu');
