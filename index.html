@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>YESHUA|JESUS|ADONAI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Inter:wght@500;700;900&family=Montserrat:wght@900&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #f1c40f;
@@ -114,6 +114,72 @@
             padding: 3px 8px;
             margin-top: 2px;
             max-width: 95%;
+        }
+
+        /* STYLED IPIN GRAPHIC SLOGAN DISPLAY */
+        .ipin-graphic-banner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 6px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(241, 196, 15, 0.3);
+            border-radius: 30px;
+            padding: 6px 18px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5), inset 0 0 10px rgba(241, 196, 15, 0.1);
+        }
+
+        .ipin-acronym-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Cinzel', serif;
+            font-weight: 900;
+            font-size: clamp(0.7rem, 1.6vw, 1.05rem);
+            color: var(--gold-bright);
+            letter-spacing: 0.08em;
+            text-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
+        }
+
+        .pin-icon {
+            color: var(--gold);
+            font-size: 1.1em;
+            animation: pinPulse 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes pinPulse {
+            0% { transform: translateY(0) rotate(-15deg); }
+            100% { transform: translateY(-3px) rotate(0deg); filter: drop-shadow(0 0 8px #f1c40f); }
+        }
+
+        .ipin-flow-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 4px clamp(6px, 1.2vw, 12px);
+            margin-top: 4px;
+        }
+
+        .ipin-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: clamp(0.42rem, 1vw, 0.7rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.95);
+            background: rgba(241, 196, 15, 0.12);
+            border: 1px solid rgba(241, 196, 15, 0.3);
+            border-radius: 12px;
+            padding: 2px 8px;
+            letter-spacing: 0.05em;
+        }
+
+        .ipin-chip .icon {
+            font-size: 0.9em;
         }
 
         /* RESPONSIVE MENU RING FOR ALL ASPECT RATIOS */
@@ -335,7 +401,7 @@
     <!-- CIRCULAR HUB CONTROLLER -->
     <div id="hub-container">
         
-        <!-- HEADER WITH HOLY SPIRIT LOGO & FULL SLOGAN -->
+        <!-- HEADER WITH HOLY SPIRIT LOGO, COMPLETE DECLARATION & IPIN GRAPHIC BANNER -->
         <header class="brand-header">
             <div class="brand-logo-wrapper">
                 <svg class="brand-logo-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -344,9 +410,9 @@
                     <circle cx="100" cy="100" r="87" stroke="#f1c40f" stroke-width="1.5" opacity="0.85"/>
                     <circle cx="100" cy="100" r="67" stroke="#f1c40f" stroke-width="2"/>
                     
-                    <text font-family="'Cinzel', serif" font-size="7.5" font-weight="700" fill="#f1c40f" letter-spacing="1.4">
+                    <text font-family="'Cinzel', serif" font-size="7" font-weight="700" fill="#f1c40f" letter-spacing="1.2">
                         <textPath href="#textCircle" startOffset="50%" text-anchor="middle">
-                            WE ROAR • WE INTERCEDE • WE SOAR • WE GROAN • WE PRAY • WE TEACH WORD
+                            WE ROAR • WE INTERCEDE • WE SOAR • WE GROAN • WE PRAY • WE GASP • WE PANT • WE TEACH WORD
                         </textPath>
                     </text>
                     
@@ -373,9 +439,24 @@
             
             <h1 class="hub-title">INTERNATIONAL PROPHETIC INTERCESSORS NETWORK</h1>
             <div class="tagline-banner">We Roar • We Intercede • We Soar • We Groan • We Pray • We Gasp • We Pant • We Teach & Study Word</div>
+
+            <!-- CREATIVE GRAPHIC IPIN SLOGAN BANNER -->
+            <div class="ipin-graphic-banner">
+                <div class="ipin-acronym-badge">
+                    <span class="pin-icon">📍</span> IPIN: I AM PINNED WITH CHRIST <span class="pin-icon">✝️</span>
+                </div>
+                <div class="ipin-flow-container">
+                    <span class="ipin-chip"><span class="icon">✝️</span> Christ</span>
+                    <span class="ipin-chip"><span class="icon">📖</span> Word</span>
+                    <span class="ipin-chip"><span class="icon">👑</span> Worship</span>
+                    <span class="ipin-chip"><span class="icon">🙌</span> Praise</span>
+                    <span class="ipin-chip"><span class="icon">🔥</span> Prayer</span>
+                    <span class="ipin-chip"><span class="icon">❤️</span> Love</span>
+                </div>
+            </div>
         </header>
         
-        <!-- CIRCULAR NAV WHEEL -->
+        <!-- CIRCULAR NAV WHEEL WITH DISCIPLESHIP PATH INCLUDED -->
         <div class="circle-menu-wrapper">
             <div class="circle-menu" id="circleMenu">
                 <div class="center-node">HOLY SPIRIT</div>
@@ -422,6 +503,13 @@
                     </div>
                 </div>
 
+                <div class="app-node" data-app="app-discipleship">
+                    <div class="content">
+                        <div style="font-size: clamp(1rem, 2.5vmin, 1.6rem);">✝️</div>
+                        <span>Discipleship</span>
+                    </div>
+                </div>
+
                 <div class="app-node" data-app="app-sermon-editor">
                     <div class="content">
                         <div style="font-size: clamp(1rem, 2.5vmin, 1.6rem);">✍️</div>
@@ -449,6 +537,7 @@
     <iframe id="app-reconciliation" class="app-frame" allow="microphone" src="https://reconcile-blond.vercel.app"></iframe>
     <iframe id="app-gods-generals" class="app-frame" allow="microphone" src="https://ochollah.github.io/Genaral"></iframe>
     <iframe id="app-bible-teaching" class="app-frame" allow="microphone" src="https://ochollah.github.io/Word"></iframe>
+    <iframe id="app-discipleship" class="app-frame" allow="microphone" src="about:blank"></iframe>
     <iframe id="app-sermon-editor" class="app-frame" allow="microphone" src="https://sermon-wheat.vercel.app"></iframe>
 
     <script>
