@@ -192,8 +192,8 @@
 
         .circle-menu {
             position: relative; 
-            width: min(72vw, 48vh, 460px);
-            height: min(72vw, 48vh, 460px);
+            width: min(72vw, 48vh, 480px);
+            height: min(72vw, 48vh, 480px);
             min-width: 250px;
             min-height: 250px;
             border-radius: 50%; 
@@ -237,11 +237,11 @@
             letter-spacing: 0.04em;
         }
 
-        /* CIRCULAR APP NODES - ENLARGED SIZE */
+        /* CIRCULAR APP NODES */
         .app-node {
             position: absolute; 
-            width: clamp(72px, 15vmin, 110px); 
-            height: clamp(72px, 15vmin, 110px);
+            width: clamp(68px, 13vmin, 98px); 
+            height: clamp(68px, 13vmin, 98px);
             border-radius: 50%; 
             background: var(--glass); 
             border: 2.5px solid var(--gold);
@@ -272,7 +272,7 @@
         }
 
         .app-node span { 
-            font-size: clamp(0.5rem, 1.2vmin, 0.75rem); 
+            font-size: clamp(0.48rem, 1.1vmin, 0.7rem); 
             font-weight: 800; 
             text-transform: uppercase; 
             margin-top: 3px; 
@@ -518,78 +518,94 @@
             </div>
         </header>
         
-        <!-- CIRCULAR NAV WHEEL WITH ENLARGED NODES -->
+        <!-- CIRCULAR NAV WHEEL WITH DYNAMIC auto-layout NODES -->
         <div class="circle-menu-wrapper">
             <div class="circle-menu" id="circleMenu">
                 <div class="center-node">HOLY SPIRIT</div>
                 
                 <div class="app-node" data-app="app-salvation">
                     <div class="content">
-                        <div style="font-size: clamp(1.1rem, 2.8vmin, 1.6rem);">🌍</div>
+                        <div style="font-size: clamp(1rem, 2.5vmin, 1.4rem);">🌍</div>
                         <span>Salvation</span>
                     </div>
                 </div>
                 
                 <div class="app-node" data-app="app-living-word">
                     <div class="content">
-                        <div style="font-size: clamp(1.1rem, 2.8vmin, 1.6rem);">📖</div>
+                        <div style="font-size: clamp(1rem, 2.5vmin, 1.4rem);">📖</div>
                         <span>Living Word</span>
                     </div>
                 </div>
 
                 <div class="app-node" data-app="app-kingdom-come">
                     <div class="content">
-                        <div style="font-size: clamp(1.1rem, 2.8vmin, 1.6rem);">👑</div>
+                        <div style="font-size: clamp(1rem, 2.5vmin, 1.4rem);">👑</div>
                         <span>Kingdom Come</span>
                     </div>
                 </div>
 
                 <div class="app-node" data-app="app-reconciliation">
                     <div class="content">
-                        <div style="font-size: clamp(1.1rem, 2.8vmin, 1.6rem);">🕊️</div>
+                        <div style="font-size: clamp(1rem, 2.5vmin, 1.4rem);">🕊️</div>
                         <span>Kingdom Love</span>
                     </div>
                 </div>
 
                 <div class="app-node" data-app="app-gods-generals">
                     <div class="content">
-                        <div style="font-size: clamp(1.1rem, 2.8vmin, 1.6rem);">⚔️</div>
+                        <div style="font-size: clamp(1rem, 2.5vmin, 1.4rem);">⚔️</div>
                         <span>God's Generals</span>
                     </div>
                 </div>
 
                 <div class="app-node" data-app="app-bible-teaching">
                     <div class="content">
-                        <div style="font-size: clamp(1.1rem, 2.8vmin, 1.6rem);">📜</div>
+                        <div style="font-size: clamp(1rem, 2.5vmin, 1.4rem);">📜</div>
                         <span>Bible Teaching</span>
                     </div>
                 </div>
 
                 <div class="app-node" data-app="app-discipleship">
                     <div class="content">
-                        <div style="font-size: clamp(1.1rem, 2.8vmin, 1.6rem);">✝️</div>
+                        <div style="font-size: clamp(1rem, 2.5vmin, 1.4rem);">✝️</div>
                         <span>Discipleship</span>
                     </div>
                 </div>
 
                 <div class="app-node" data-app="app-sermon-editor">
                     <div class="content">
-                        <div style="font-size: clamp(1.1rem, 2.8vmin, 1.6rem);">✍️</div>
+                        <div style="font-size: clamp(1rem, 2.5vmin, 1.4rem);">✍️</div>
                         <span>Sermon Editor</span>
                     </div>
                 </div>
 
                 <div class="app-node" data-app="app-financial-matrix">
                     <div class="content">
-                        <div style="font-size: clamp(1.1rem, 2.8vmin, 1.6rem);">📊</div>
+                        <div style="font-size: clamp(1rem, 2.5vmin, 1.4rem);">📊</div>
                         <span>Financial Matrix</span>
                     </div>
                 </div>
 
                 <div class="app-node" data-app="app-kingdom-charity">
                     <div class="content">
-                        <div style="font-size: clamp(1.1rem, 2.8vmin, 1.6rem);">🤝</div>
+                        <div style="font-size: clamp(1rem, 2.5vmin, 1.4rem);">🤝</div>
                         <span>Kingdom Charity</span>
+                    </div>
+                </div>
+
+                <!-- ADDED CIRCULAR NODE 1: HONOR -->
+                <div class="app-node" data-app="app-honor">
+                    <div class="content">
+                        <div style="font-size: clamp(1rem, 2.5vmin, 1.4rem);">🎖️</div>
+                        <span>Honor</span>
+                    </div>
+                </div>
+
+                <!-- ADDED CIRCULAR NODE 2: SOLUTIONS -->
+                <div class="app-node" data-app="app-solutions">
+                    <div class="content">
+                        <div style="font-size: clamp(1rem, 2.5vmin, 1.4rem);">💡</div>
+                        <span>Solutions</span>
                     </div>
                 </div>
             </div>
@@ -618,23 +634,26 @@
         </button>
     </div>
 
-    <!-- ISOLATED SCRIPT CONTAINERS -->
-    <iframe id="app-salvation" class="app-frame" allow="microphone; geolocation" src="https://jesus-nine-drab.vercel.app/"></iframe>
-    <iframe id="app-living-word" class="app-frame" allow="microphone" src="https://written-gamma.vercel.app/"></iframe>
-    <iframe id="app-kingdom-come" class="app-frame" allow="camera; microphone" src="https://ka-ten-rust.vercel.app/"></iframe>
-    <iframe id="app-reconciliation" class="app-frame" allow="microphone" src="https://reconcile-blond.vercel.app/"></iframe>
-    <iframe id="app-gods-generals" class="app-frame" allow="microphone" src="https://ochollah.github.io/Genaral/"></iframe>
-    <iframe id="app-bible-teaching" class="app-frame" allow="microphone" src="https://ochollah.github.io/Word/"></iframe>
-    <iframe id="app-discipleship" class="app-frame" allow="microphone" src="https://ochollah.github.io/Disciple/"></iframe>
-    <iframe id="app-sermon-editor" class="app-frame" allow="microphone" src="https://sermon-wheat.vercel.app/"></iframe>
-    <iframe id="app-financial-matrix" class="app-frame" allow="microphone" src="https://finance-vert-zeta-72.vercel.app/"></iframe>
-    <iframe id="app-kingdom-charity" class="app-frame" allow="microphone" src="https://charity-alpha-dusky.vercel.app/"></iframe>
+    <!-- ISOLATED SCRIPT CONTAINERS WITH COMPLETE PERMISSION DELEGATION -->
+    <iframe id="app-salvation" class="app-frame" allow="geolocation; microphone; camera; accelerometer; autoplay" src="https://jesus-nine-drab.vercel.app/"></iframe>
+    <iframe id="app-living-word" class="app-frame" allow="geolocation; microphone; camera" src="https://written-gamma.vercel.app/"></iframe>
+    <iframe id="app-kingdom-come" class="app-frame" allow="geolocation; camera; microphone" src="https://ka-ten-rust.vercel.app/"></iframe>
+    <iframe id="app-reconciliation" class="app-frame" allow="geolocation; microphone" src="https://reconcile-blond.vercel.app/"></iframe>
+    <iframe id="app-gods-generals" class="app-frame" allow="geolocation; microphone" src="https://ochollah.github.io/Genaral/"></iframe>
+    <iframe id="app-bible-teaching" class="app-frame" allow="geolocation; microphone" src="https://ochollah.github.io/Word/"></iframe>
+    <iframe id="app-discipleship" class="app-frame" allow="geolocation; microphone" src="https://ochollah.github.io/Disciple/"></iframe>
+    <iframe id="app-sermon-editor" class="app-frame" allow="geolocation; microphone" src="https://sermon-wheat.vercel.app/"></iframe>
+    <iframe id="app-financial-matrix" class="app-frame" allow="geolocation; microphone" src="https://finance-vert-zeta-72.vercel.app/"></iframe>
+    <iframe id="app-kingdom-charity" class="app-frame" allow="geolocation; microphone" src="https://charity-alpha-dusky.vercel.app/"></iframe>
+    <iframe id="app-honor" class="app-frame" allow="geolocation; microphone; camera" src="https://honor-sigma.vercel.app/"></iframe>
+    <iframe id="app-solutions" class="app-frame" allow="geolocation; microphone; camera" src="https://solution-one-theta.vercel.app/"></iframe>
 
     <script>
         const menu = document.getElementById('circleMenu');
         const fabWrapper = document.getElementById('floating-hub-wrapper');
         const fabToggleBtn = document.getElementById('fabToggleBtn');
 
+        // DYNAMIC MATHEMATICAL LAYOUT FOR ANY NUMBER OF NODES
         function layoutNodes() {
             if (!menu) return;
             const nodes = menu.querySelectorAll('.app-node');
@@ -696,6 +715,38 @@
             fabWrapper.classList.toggle('collapsed');
             fabToggleBtn.textContent = fabWrapper.classList.contains('collapsed') ? '☰' : '✕';
         }
+
+        /* 
+         * NON-INTERFERING CROSS-FRAME INTERLINKING (postMessage API)
+         * Allows child frames to safely request navigation or trigger geolocation
+         * auto-detection without breaking app state, layout, or responsiveness.
+         */
+        window.addEventListener('message', function(event) {
+            if (!event.data || typeof event.data !== 'object') return;
+
+            const { action, targetApp } = event.data;
+
+            if (action === 'NAVIGATE_APP' && targetApp) {
+                launchApp(targetApp);
+            } else if (action === 'RETURN_HUB') {
+                returnToHub();
+            } else if (action === 'GEOLOCATION_DETECT') {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                        (pos) => {
+                            if (event.source) {
+                                event.source.postMessage({
+                                    action: 'GEOLOCATION_RESPONSE',
+                                    coords: { latitude: pos.coords.latitude, longitude: pos.coords.longitude }
+                                }, '*');
+                            }
+                        },
+                        (err) => console.warn('Geolocation Error:', err.message),
+                        { enableHighAccuracy: true, timeout: 10000 }
+                    );
+                }
+            }
+        });
 
         // DRAGGABLE FLOATING HUB BUTTON LOGIC
         let isDragging = false;
